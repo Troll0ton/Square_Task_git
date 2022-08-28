@@ -85,11 +85,11 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a3cf790e145bf67e7398cd0d49efa4c81">open_test</a> ()</td></tr>
 <tr class="memdesc:a3cf790e145bf67e7398cd0d49efa4c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles file's data for unit test. <br /></td></tr>
 <tr class="separator:a3cf790e145bf67e7398cd0d49efa4c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4087d327a517cfd60128c04fa87cd3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#ad4087d327a517cfd60128c04fa87cd3e">check_starting_test</a> (int test_sym)</td></tr>
-<tr class="memdesc:ad4087d327a517cfd60128c04fa87cd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks, if user has chosen to start unit testing.  <a href="unit__test_8h.html#ad4087d327a517cfd60128c04fa87cd3e">More...</a><br /></td></tr>
-<tr class="separator:ad4087d327a517cfd60128c04fa87cd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a358a638f1513ae66a64653d56df43d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a4a358a638f1513ae66a64653d56df43d">check_starting_test</a> (int user_input_sym)</td></tr>
+<tr class="memdesc:a4a358a638f1513ae66a64653d56df43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks, if user has chosen to start unit testing.  <a href="unit__test_8h.html#a4a358a638f1513ae66a64653d56df43d">More...</a><br /></td></tr>
+<tr class="separator:a4a358a638f1513ae66a64653d56df43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f0952cd19afe226a3a068061eb7176d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a7f0952cd19afe226a3a068061eb7176d">unit_test</a> (double a, double b, double c, double x1_right, double x2_right, int num_of_roots_right)</td></tr>
-<tr class="memdesc:a7f0952cd19afe226a3a068061eb7176d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function solves quadratic equation.  <a href="unit__test_8h.html#a7f0952cd19afe226a3a068061eb7176d">More...</a><br /></td></tr>
+<tr class="memdesc:a7f0952cd19afe226a3a068061eb7176d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function do unit testing.  <a href="unit__test_8h.html#a7f0952cd19afe226a3a068061eb7176d">More...</a><br /></td></tr>
 <tr class="separator:a7f0952cd19afe226a3a068061eb7176d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af878e9f829ed6790c803182895d67aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#af878e9f829ed6790c803182895d67aab">print_error</a> (int test_num)</td></tr>
 <tr class="memdesc:af878e9f829ed6790c803182895d67aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function informs the user that there is ERROR in the Test.  <a href="unit__test_8h.html#af878e9f829ed6790c803182895d67aab">More...</a><br /></td></tr>
@@ -99,8 +99,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit
 <tr class="separator:a989983e7aac470a825ddab610464e852"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad4087d327a517cfd60128c04fa87cd3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4087d327a517cfd60128c04fa87cd3e">&#9670;&nbsp;</a></span>check_starting_test()</h2>
+<a id="a4a358a638f1513ae66a64653d56df43d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a358a638f1513ae66a64653d56df43d">&#9670;&nbsp;</a></span>check_starting_test()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,7 +109,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit
           <td class="memname">bool check_starting_test </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>test_sym</em></td><td>)</td>
+          <td class="paramname"><em>user_input_sym</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -118,7 +118,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit
 <p>This function checks, if user has chosen to start unit testing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">test_sym</td><td>- this symbol is entered by the user</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">test_sym</td><td>- this symbol is entered by the user</td></tr>
   </table>
   </dd>
 </dl>
@@ -146,12 +146,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit
 <p>This function convert files number to special constants. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- file's number</td></tr>
+    <tr><td class="paramname">a</td><td>[in] - file's number</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>special constant = num_if_roots </dd></dl>
-<p>enum</p>
 
 </div>
 </div>
@@ -174,7 +173,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit
 <p>This function informs the user that there is ERROR in the Test. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num_of_test</td><td>- test number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_of_test</td><td>- test number </td></tr>
   </table>
   </dd>
 </dl>
@@ -231,19 +230,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit
       </table>
 </div><div class="memdoc">
 
-<p>This function solves quadratic equation. </p>
+<p>This function do unit testing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- a-coefficient </td></tr>
-    <tr><td class="paramname">b</td><td>- b-coefficient </td></tr>
-    <tr><td class="paramname">c</td><td>- c-coefficient </td></tr>
-    <tr><td class="paramname">x1_ref</td><td>- 1st root from file </td></tr>
-    <tr><td class="paramname">x2_ref</td><td>- 2st root from file </td></tr>
-    <tr><td class="paramname">num_of_roots_right</td><td>- number of roots from file</td></tr>
+    <tr><td class="paramname">a</td><td>[in] - a-coefficient </td></tr>
+    <tr><td class="paramname">b</td><td>[in] - b-coefficient </td></tr>
+    <tr><td class="paramname">c</td><td>[in] - c-coefficient </td></tr>
+    <tr><td class="paramname">x1_right</td><td>[in] - 1st root from file </td></tr>
+    <tr><td class="paramname">x1_right</td><td>[in] - 2st root from file </td></tr>
+    <tr><td class="paramname">num_of_roots_right</td><td>[in] - number of roots from file</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>function compares the values ​​from the file and from the program, and in case of a mismatch reports it </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>function compares the values from the file and from the program, and in case of a mismatch reports it </dd></dl>
 
 </div>
 </div>

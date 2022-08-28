@@ -10,6 +10,7 @@ int solve_equation (double a, double b, double c, double *x1, double *x2)
 
     assert (x1 != NULL);
     assert (x2 != NULL);
+    assert (x1 != x2);
 
     if(is_equal (a, 0))
     {
@@ -30,6 +31,7 @@ int solve_linear (double b, double c, double* x1, double* x2)
 
     assert (x1 != NULL);
     assert (x2 != NULL);
+    assert (x1 != x2);
 
     if(is_equal (b, 0) && is_equal (c, 0))
     {
@@ -45,18 +47,18 @@ int solve_linear (double b, double c, double* x1, double* x2)
     *x2 = -c / b;
 
     return ONE_ROOT;
-
 }
 //-----------------------------------------------------------------------------
 
 int solve_quadratic (double a, double b, double c, double* x1, double* x2)
 {
-    assert(std::isfinite (a));
-    assert(std::isfinite (b));
-    assert(std::isfinite (c));
+    assert (std::isfinite (a));
+    assert (std::isfinite (b));
+    assert (std::isfinite (c));
 
     assert (x1 != NULL);
     assert (x2 != NULL);
+    assert (x1 != x2);
 
     double discriminant = b*b - 4*a*c;
 
@@ -118,8 +120,7 @@ bool is_equal (double a, double b)
 
     const double EPS = 1e-1;
 
-    return (fabs (a - b) < EPS); ///ֵֿׁ לוסעםûי
+    return (fabs (a - b) < EPS);
 }
 
 //-----------------------------------------------------------------------------
-

@@ -28,6 +28,9 @@ bool input_handling (double *a, double *b, double *c)
     assert (b != NULL);
     assert (c != NULL);
 
+    assert (a != b);
+    assert (a != c);
+
     const int correct_input = 3;
 
     while(scanf ("%lg %lg %lg", a, b, c) != correct_input)
@@ -61,9 +64,9 @@ bool input_handling (double *a, double *b, double *c)
 
 //-----------------------------------------------------------------------------
 
-bool check_quit (int quit_sym)
+bool check_quit (int user_input_sym)
 {
-    return (quit_sym == 'q');
+    return (user_input_sym == 'q');
 }
 
 //-----------------------------------------------------------------------------
@@ -83,3 +86,23 @@ void clear_buf ()
 
 //-----------------------------------------------------------------------------
 
+void print_amount_of_roots(int num_of_roots)
+{
+    switch(num_of_roots)
+    {
+        case NO_ROOT:
+            printf ("roots doesn't exist");
+            break;
+        case ONE_ROOT:
+            printf ("1 root");
+            break;
+        case TWO_ROOTS:
+            printf ("2 roots");
+            break;
+        case INFINITY_ROOTS:
+            printf ("the number of roots id infinite");
+            break;
+    }
+}
+
+//-----------------------------------------------------------------------------

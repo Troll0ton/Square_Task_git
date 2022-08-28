@@ -1,6 +1,6 @@
 #include "unit_test.h"
-#include "input_data.h"
-#include "square_eq_solve.h"
+#include "input_output.h"
+#include "math_funct.h"
 
 //-----------------------------------------------------------------------------
 
@@ -30,5 +30,3 @@ int main ()
 }
 
 //-----------------------------------------------------------------------------
-
-

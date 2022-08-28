@@ -62,7 +62,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -80,12 +79,6 @@ $(function() {
 </div>
 <p><a href="math__funct_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a7e02a5840d9f983328deba61f05fe91f"><td class="memItemLeft" align="right" valign="top"><a id="a7e02a5840d9f983328deba61f05fe91f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>print_amount_of_roots</b>(num_of_roots)&#160;&#160;&#160;printf(#num_of_roots);</td></tr>
-<tr class="separator:a7e02a5840d9f983328deba61f05fe91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:adba75749ca0149ec7deff430f61efc85"><td class="memItemLeft" align="right" valign="top"><a id="adba75749ca0149ec7deff430f61efc85"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>NUM_OF_ROOTS</b> { <b>NO_ROOT</b> = 10
@@ -143,14 +136,13 @@ Functions</h2></td></tr>
 <p>this function checks if two numbers are the same </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- first numeric </td></tr>
-    <tr><td class="paramname">b</td><td>- first numeric</td></tr>
+    <tr><td class="paramname">a</td><td>[in] - first numeric </td></tr>
+    <tr><td class="paramname">b</td><td>[in] - second numeric</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool - true - a == b false - a != b </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>first numeric == second numeric </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>accuracy = 0,1 </dd></dl>
-<p>ֵֿׁ לוסעםûי</p>
 
 </div>
 </div>
@@ -189,9 +181,9 @@ Functions</h2></td></tr>
 <p>This function print roots and number of roots. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num_of_roots</td><td>- number of roots </td></tr>
-    <tr><td class="paramname">x1</td><td>- 1st root </td></tr>
-    <tr><td class="paramname">x2</td><td>- 2st root </td></tr>
+    <tr><td class="paramname">num_of_roots</td><td>[in] - number of roots </td></tr>
+    <tr><td class="paramname">x1</td><td>[in] - 1st root </td></tr>
+    <tr><td class="paramname">x2</td><td>[in] - 2st root </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,11 +237,11 @@ Functions</h2></td></tr>
 <p>this function determines the TYPE of the given equation </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- a-coefficient </td></tr>
-    <tr><td class="paramname">b</td><td>- b-coefficient </td></tr>
-    <tr><td class="paramname">c</td><td>- c-coefficient </td></tr>
-    <tr><td class="paramname">x1</td><td>- pointer to the 1st root </td></tr>
-    <tr><td class="paramname">x2</td><td>- pointer to the 2st root</td></tr>
+    <tr><td class="paramname">a</td><td>[in] - a-coefficient </td></tr>
+    <tr><td class="paramname">b</td><td>[in] - b-coefficient </td></tr>
+    <tr><td class="paramname">c</td><td>[in] - c-coefficient </td></tr>
+    <tr><td class="paramname">x1</td><td>[out] - pointer to the 1st root </td></tr>
+    <tr><td class="paramname">x2</td><td>[out] - pointer to the 2st root</td></tr>
   </table>
   </dd>
 </dl>
@@ -298,11 +290,10 @@ Functions</h2></td></tr>
 <p>This function solves linear equation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- a-coefficient </td></tr>
-    <tr><td class="paramname">b</td><td>- b-coefficient </td></tr>
-    <tr><td class="paramname">c</td><td>- c-coefficient </td></tr>
-    <tr><td class="paramname">x1</td><td>- pointer to the 1st root </td></tr>
-    <tr><td class="paramname">x2</td><td>- pointer to the 2st root</td></tr>
+    <tr><td class="paramname">b</td><td>[in] - b-coefficient </td></tr>
+    <tr><td class="paramname">c</td><td>[in] - c-coefficient </td></tr>
+    <tr><td class="paramname">x1</td><td>[out] - pointer to the 1st root </td></tr>
+    <tr><td class="paramname">x2</td><td>[out] - pointer to the 2st root</td></tr>
   </table>
   </dd>
 </dl>
@@ -358,11 +349,11 @@ Functions</h2></td></tr>
 <p>This function solves quadratic equation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- a-coefficient </td></tr>
-    <tr><td class="paramname">b</td><td>- b-coefficient </td></tr>
-    <tr><td class="paramname">c</td><td>- c-coefficient </td></tr>
-    <tr><td class="paramname">x1</td><td>- pointer to the 1st root </td></tr>
-    <tr><td class="paramname">x2</td><td>- pointer to the 2st root</td></tr>
+    <tr><td class="paramname">a</td><td>[in] - a-coefficient </td></tr>
+    <tr><td class="paramname">b</td><td>[in] - b-coefficient </td></tr>
+    <tr><td class="paramname">c</td><td>[in] - c-coefficient </td></tr>
+    <tr><td class="paramname">x1</td><td>[out] - pointer to the 1st root </td></tr>
+    <tr><td class="paramname">x2</td><td>[out] - pointer to the 2st root</td></tr>
   </table>
   </dd>
 </dl>

@@ -2,9 +2,9 @@
 
 //-----------------------------------------------------------------------------
 
-bool check_starting_test (int test_sym)
+bool check_starting_test (int user_input_sym)
 {
-    return (test_sym == 't');
+    return (user_input_sym == 't');
 }
 
 //-----------------------------------------------------------------------------
@@ -47,13 +47,13 @@ void open_test ()
 void unit_test (double a, double b, double c,
                 double x1_right, double x2_right, int num_of_roots_right)
 {
-    assert(std::isfinite (a));
-    assert(std::isfinite (b));
-    assert(std::isfinite (c));
+    assert (std::isfinite (a));
+    assert (std::isfinite (b));
+    assert (std::isfinite (c));
 
-    assert(std::isfinite (x1_right));
-    assert(std::isfinite (x2_right));
-    assert(std::isfinite (num_of_roots_right));
+    assert (std::isfinite (x1_right));
+    assert (std::isfinite (x2_right));
+    assert (std::isfinite (num_of_roots_right));
 
     double x1 = 0;
     double x2 = 0;
@@ -71,7 +71,7 @@ void unit_test (double a, double b, double c,
         printf (".\n");
 
         printf ("Expected number of roots is ");
-        print_amount_of_roots(num_of_roots_right);
+        print_amount_of_roots (num_of_roots_right);
         printf (".\n");
     }
 
@@ -112,11 +112,21 @@ void print_error (int test_num)
 
 int convert_function (int a)
 {
-    if(a == 0) return NO_ROOT;
-    if(a == 1) return ONE_ROOT;
-    if(a == 2) return TWO_ROOTS;
-    if(a == 3) return INFINITY_ROOTS;
+    switch(a)
+    {
+        case 0:
+            return NO_ROOT;
+            break;
+        case 1:
+            return ONE_ROOT;
+            break;
+        case 2:
+            return TWO_ROOTS;
+            break;
+        case 3:
+            return INFINITY_ROOTS;
+            break;
+    }
 }
 
 //-----------------------------------------------------------------------------
-

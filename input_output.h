@@ -1,7 +1,7 @@
 //! @file input_output.h
 
-#ifndef   INPUT_OUTPUT
-#define   INPUT_OUTPUT
+#ifndef   INPUT_OUTPUT_H
+#define   INPUT_OUTPUT_H
 
 //-----------------------------------------------------------------------------
 
@@ -23,30 +23,22 @@
 //! @note  Also it remembers the parameters entered by the user
 //!
 //-----------------------------------------------------------------------------
-
 bool input_handling (double* a, double* b, double* c);
-
 
 //-----------------------------------------------------------------------------
 //! @brief This function  clears the buffer
 //-----------------------------------------------------------------------------
-
 void clear_buf ();
-
 
 //-----------------------------------------------------------------------------
 //! @brief This function prints dashs
 //-----------------------------------------------------------------------------
-
 void dashs ();
-
 
 //-----------------------------------------------------------------------------
 //! @brief This function this function displays information about program
 //-----------------------------------------------------------------------------
-
 void inform_user ();
-
 
 //-----------------------------------------------------------------------------
 //! @brief This function checks if the user has chosen to exit the program
@@ -59,9 +51,16 @@ void inform_user ();
 //! @note if such a symbol is not found, the program runs in standard mode
 //!
 //-----------------------------------------------------------------------------
+bool check_quit (int user_input_sym);
 
-bool check_quit (int quit_sym);
+//-----------------------------------------------------------------------------
+//! @brief This function prints amount of roots
+//!
+//! @param [in] num_of_roots - the number of roots
+//!
+//-----------------------------------------------------------------------------
+void print_amount_of_roots(int num_of_roots);
 
 //-----------------------------------------------------------------------------
 
-#endif
+#endif //INPUT_OUTPUT_H
