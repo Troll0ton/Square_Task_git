@@ -25,24 +25,20 @@
 //-----------------------------------------------------------------------------
 bool input_handling (double* a, double* b, double* c);
 
-
 //-----------------------------------------------------------------------------
 //! @brief This function  clears the buffer
 //-----------------------------------------------------------------------------
 void clear_buf ();
-
 
 //-----------------------------------------------------------------------------
 //! @brief This function prints dashs
 //-----------------------------------------------------------------------------
 void dashs ();
 
-
 //-----------------------------------------------------------------------------
 //! @brief This function this function displays information about program
 //-----------------------------------------------------------------------------
 void inform_user ();
-
 
 //-----------------------------------------------------------------------------
 //! @brief This function checks if the user has chosen to exit the program
@@ -60,10 +56,10 @@ bool check_quit (int user_input_sym);
 //-----------------------------------------------------------------------------
 //! @brief This function prints amount of roots
 //!
-//! @param [in] num_of_roots - this symbol is entered by the user
+//! @param [in] num_of_roots - the number of roots
 //!
 //-----------------------------------------------------------------------------
-void print_amount_of_roots(int num_of_roots);
+void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
 

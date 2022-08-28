@@ -59,7 +59,7 @@ bool check_quit (int user_input_sym);
 //! @param [in] num_of_roots - the number of roots
 //!
 //-----------------------------------------------------------------------------
-void print_amount_of_roots(int num_of_roots);
+void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
 

@@ -19,12 +19,18 @@ int main ()
     {
         printf ("\nProgram is complete.");
 
+        clear_buf ();
+        getchar (); // stop the closing
+
         return 0;
     }
 
     int num_of_roots = solve_equation (a, b, c, &x1, &x2);
 
     print_roots (num_of_roots, x1, x2);
+
+    clear_buf ();
+    getchar (); // stop the closing
 
     return 0;
 }

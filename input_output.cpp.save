@@ -86,17 +86,22 @@ void clear_buf ()
 
 //-----------------------------------------------------------------------------
 
-void print_amount_of_roots(int num_of_roots)
+void print_amount_of_roots (int num_of_roots)
 {
     switch(num_of_roots)
     {
-        if(NO_ROOT) 
+        case NO_ROOT:
             printf ("roots doesn't exist");
-        if(ONE_ROOT) 
+            break;
+        case ONE_ROOT:
             printf ("1 root");
-        if(TWO_ROOTS) 
+            break;
+        case TWO_ROOTS:
             printf ("2 roots");
-        if(INFINITY_ROOTS) printf ("the number of roots id infinite");
+            break;
+        case INFINITY_ROOTS:
+            printf ("the number of roots id infinite");
+            break;
     }
 }
 

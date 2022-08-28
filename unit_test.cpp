@@ -44,8 +44,8 @@ void open_test ()
 
 //-----------------------------------------------------------------------------
 
-void unit_test (double a, double b, double c,
-                double x1_right, double x2_right, int num_of_roots_right)
+void unit_test (double a,        double b,        double c,
+                double x1_right, double x2_right, int    num_of_roots_right)
 {
     assert (std::isfinite (a));
     assert (std::isfinite (b));
@@ -68,18 +68,17 @@ void unit_test (double a, double b, double c,
 
         printf ("Unexpected number of roots: ");
         print_amount_of_roots (num_of_roots);
-        printf (".\n");
 
         printf ("Expected number of roots is ");
         print_amount_of_roots (num_of_roots_right);
-        printf (".\n");
+
     }
 
     if(!is_equal (x1, x1_right))
     {
         flag_error = true;
 
-        printf ("Wrong root: %lg.  \n"
+        printf ("Wrong root:    %lg\n"
                 "Expected root: %lg\n", x1, x1_right);
     }
 
@@ -87,7 +86,7 @@ void unit_test (double a, double b, double c,
     {
         flag_error = true;
 
-        printf ("Wrong root: %lg.  \n"
+        printf ("Wrong root:    %lg\n"
                 "Expected root: %lg\n", x2, x2_right);
     }
 
@@ -103,15 +102,11 @@ void unit_test (double a, double b, double c,
 
 //-----------------------------------------------------------------------------
 
-void print_error (int test_num)
-{
-    printf ("TEST %d - ERROR.\n", test_num);
-}
-
-//-----------------------------------------------------------------------------
 
 int convert_function (int a)
 {
+    // return a + 10;
+
     switch(a)
     {
         case 0:

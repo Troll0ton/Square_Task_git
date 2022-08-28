@@ -21,10 +21,10 @@
 
 enum NUM_OF_ROOTS
 {
-    NO_ROOT = 10,
-    ONE_ROOT = 11,
-    TWO_ROOTS = 12,
-    INFINITY_ROOTS = 13
+    NO_ROOT = 0,
+    ONE_ROOT = 1,
+    TWO_ROOTS = 2,
+    INFINITY_ROOTS = 3
 };
 
 //-----------------------------------------------------------------------------

@@ -86,7 +86,7 @@ void clear_buf ()
 
 //-----------------------------------------------------------------------------
 
-void print_amount_of_roots(int num_of_roots)
+void print_amount_of_roots (int num_of_roots)
 {
     switch(num_of_roots)
     {
