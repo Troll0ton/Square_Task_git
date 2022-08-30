@@ -62,5 +62,17 @@ bool check_quit (int user_input_sym);
 void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
+//! @brief This function handles starting testing or exiting
+//!
+//! @param [in] argc - the number of command line's arguments
+//! @param [in] *argv[] - the array of command line's arguments
+//!
+//-----------------------------------------------------------------------------
+bool Options (int argc, char *argv[]);
+
+//-----------------------------------------------------------------------------
+//! @brief This function handles user's exit
+//-----------------------------------------------------------------------------
+void prog_wait_close ();
 
 #endif //INPUT_OUTPUT_H

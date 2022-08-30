@@ -21,7 +21,6 @@
 
 enum NUM_OF_ROOTS
 {
-    // ??
     NO_ROOT = 10,
     ONE_ROOT = 11,
     TWO_ROOTS = 12,

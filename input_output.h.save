@@ -62,5 +62,8 @@ bool check_quit (int user_input_sym);
 void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
+bool Options (int argc, char *argv[])
+
+//-----------------------------------------------------------------------------
 
 #endif //INPUT_OUTPUT_H

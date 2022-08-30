@@ -4,8 +4,17 @@
 
 //-----------------------------------------------------------------------------
 
-int main ()
+int main (int argc, char *argv[])
 {
+    assert (argc != 0 && argv != NULL);
+
+    if(Options (argc, argv) == false)
+    {
+        prog_wait_close ();
+
+        return 0;
+    }
+
     double a = 0;
     double b = 0;
     double c = 0;
@@ -17,10 +26,7 @@ int main ()
 
     if(!input_handling (&a, &b, &c))
     {
-        printf ("\nProgram is complete.");
-
-        clear_buf ();
-        getchar (); // stop the closing
+        prog_wait_close ();
 
         return 0;
     }
@@ -29,8 +35,7 @@ int main ()
 
     print_roots (num_of_roots, x1, x2);
 
-    clear_buf ();
-    getchar (); // stop the closing
+    prog_wait_close ();
 
     return 0;
 }

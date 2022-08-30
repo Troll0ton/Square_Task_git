@@ -51,19 +51,6 @@ void unit_test (double a, double b, double c,
 //-----------------------------------------------------------------------------
 void print_error (int test_num);
 
-
 //-----------------------------------------------------------------------------
-//! @brief This function convert files number to special constants.
-//!
-//! @param a [in] - file's number
-//!
-//! @return special constant = num_if_roots
-//!
-//-----------------------------------------------------------------------------
-int  convert_function (int a);
-
-
-//-----------------------------------------------------------------------------
-
 
 #endif //UNIT_TEST_H

@@ -2,7 +2,6 @@
 
 //-----------------------------------------------------------------------------
 
-
 void inform_user ()
 {
     dashs ();
@@ -13,8 +12,7 @@ void inform_user ()
 
     dashs ();
 
-    printf ("Press q to exit                     \n"
-            "Press t to begin unit testing       \n\n"
+    printf ("Press 'q' to exit                   \n"
             "Please enter coefficients (a, b, c):\n");
 
     dashs ();
@@ -41,13 +39,6 @@ bool input_handling (double *a, double *b, double *c)
         {
             printf ("EXIT");
             dashs ();
-
-            return false;
-        }
-
-        if(check_starting_test (user_input_sym))
-        {
-            open_test ();
 
             return false;
         }
@@ -91,18 +82,64 @@ void print_amount_of_roots (int num_of_roots)
     switch(num_of_roots)
     {
         case NO_ROOT:
-            printf ("roots doesn't exist");
+            printf ("roots doesn't exist\n");
             break;
         case ONE_ROOT:
-            printf ("1 root");
+            printf ("1 root\n");
             break;
         case TWO_ROOTS:
-            printf ("2 roots");
+            printf ("2 roots\n");
             break;
         case INFINITY_ROOTS:
-            printf ("the number of roots id infinite");
+            printf ("the number of roots id infinite\n");
+            break;
+        default :
+            printf ("unexpected number of roots return\n");
             break;
     }
+}
+
+//-----------------------------------------------------------------------------
+
+bool Options (int argc, char *argv[])
+{
+    if(argc > 2)
+    {
+        printf ("To many command line's arguments.");
+
+        return false;
+    }
+
+    if(argc == 2)
+    {
+        if((argv[1][0] != '-') ||
+           (argv[1][1] != 't')    )
+        {
+            printf ("It is not command line's argument  \n"
+                    "input '-t' to begin unit testing   \n\n");
+
+            return false;
+        }
+
+        if(check_starting_test (argv[1][1]))
+        {
+            open_test ();
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+//-----------------------------------------------------------------------------
+
+void prog_wait_close ()
+{
+    printf ("\nProgram is complete.");
+
+    clear_buf ();
+    getchar (); // stop the closing
 }
 
 //-----------------------------------------------------------------------------
