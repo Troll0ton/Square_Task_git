@@ -88,7 +88,10 @@ int solve_equation (double a,  double b, double c, double* x1, double* x2);
 //! @param a [in] - first numeric
 //! @param b [in] - second numeric
 //!
-//! @return first numeric == second numeric
+//!
+//! @return bool - true, first numeric = second numeric
+//!              - false, in other situations
+//!
 //! @note accuracy = 0,1
 //-----------------------------------------------------------------------------
 bool is_equal (double a, double b);

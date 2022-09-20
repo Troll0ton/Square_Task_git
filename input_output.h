@@ -62,13 +62,16 @@ bool check_quit (int user_input_sym);
 void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
-//! @brief This function handles starting testing or exiting
+//! @brief This function handles starting testing
 //!
 //! @param [in] argc - the number of command line's arguments
 //! @param [in] *argv[] - the array of command line's arguments
 //!
+//! @return bool - true, when user has chosen to start unit testing
+//!              - false, when user has chosen to continue
+//!
 //-----------------------------------------------------------------------------
-bool Options (int argc, char *argv[]);
+bool options (int argc, char *argv[]);
 
 //-----------------------------------------------------------------------------
 //! @brief This function handles user's exit

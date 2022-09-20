@@ -101,7 +101,7 @@ void print_amount_of_roots (int num_of_roots)
 
 //-----------------------------------------------------------------------------
 
-bool Options (int argc, char *argv[])
+bool options (int argc, char *argv[])
 {
     if(argc > 2)
     {
@@ -115,7 +115,8 @@ bool Options (int argc, char *argv[])
         if((argv[1][0] != '-') ||
            (argv[1][1] != 't')    )
         {
-            printf ("It is not command line's argument  \n"
+            printf ("\n"
+                    "It is not command line's argument  \n"
                     "input '-t' to begin unit testing   \n\n");
 
             return false;

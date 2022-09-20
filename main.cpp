@@ -8,7 +8,7 @@ int main (int argc, char *argv[])
 {
     assert (argc != 0 && argv != NULL);
 
-    if(Options (argc, argv) == false)
+    if(options (argc, argv) == false)
     {
         prog_wait_close ();
 
