@@ -3,7 +3,11 @@
 #ifndef UNIT_TEST_H
 #define UNIT_TEST_H
 
+//-----------------------------------------------------------------------------
+
 #define DATA_TEST_FILE "test.txt"
+
+//-----------------------------------------------------------------------------
 
 #include "math_funct.h"
 #include "input_output.h"
@@ -18,14 +22,15 @@ void open_test ();
 //-----------------------------------------------------------------------------
 //! @brief This function checks, if user has chosen to start unit testing
 //!
-//! @param [in] test_sym - this symbol is entered by the user
+//! @param [in] o_name - pointer to argument of command line
 //!
-//! @return bool - true-indicating that the user has chosen to start unit testing
-//!
+//! @return SUCCESS_READ, if argument of command line must run unit testing 
+//!         NO_ARG, if argument of command is not responsible for this
+//! 
 //! @note if such a symbol is not found, the program runs in standard mode
 //!
 //-----------------------------------------------------------------------------
-bool check_starting_test (int user_input_sym);
+int check_start_test (char *o_name);
 
 //-----------------------------------------------------------------------------
 //! @brief This function do unit testing

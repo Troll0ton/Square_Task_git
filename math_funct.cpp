@@ -14,11 +14,11 @@ int solve_equation (double a, double b, double c, double *x1, double *x2)
 
     if(is_equal (a, 0))
     {
-        solve_linear (b, c, x1, x2);
+        return solve_linear (b, c, x1, x2);
     }
     else
     {
-        solve_quadratic (a, b, c, x1, x2);
+        return solve_quadratic (a, b, c, x1, x2);
     }
 }
 

@@ -10,20 +10,42 @@
 
 //-----------------------------------------------------------------------------
 
+#define SUCCESS_READ 1
+#define ARG_MEET 1
+#define NO_ARG 0
+#define ARG_NO 0
+#define SAME_STR 0
+#define STOP_WORK 0
+
+//-----------------------------------------------------------------------------
+
+const int max_argc = 2;
+
+//-----------------------------------------------------------------------------
+
+struct Option
+{
+    char opt_name[3] = {0};
+
+    int (*opt_handle) (char* o_name);
+};
+
+//-----------------------------------------------------------------------------
+
 //-----------------------------------------------------------------------------
 //! @brief This function handles user's input
 //!
-//! @param  a - pointer to a-coefficient
-//! @param  b - pointer to b-coefficient
-//! @param  c - pointer to c-coefficient
+//! @param [out] a - pointer to a-coefficient
+//! @param [out] b - pointer to b-coefficient
+//! @param [out] c - pointer to c-coefficient
 //!
-//! @return bool - false indicating that the user has chosen to exit the program or run a test
-//!              - true indicating that the user has chosen to solve his equation
+//! @return SUCCESS_READ, if reading successfully completed
+//!         STOP_WORK, if user decided to finish working
 //!
 //! @note  Also it remembers the parameters entered by the user
 //!
 //-----------------------------------------------------------------------------
-bool input_handling (double* a, double* b, double* c);
+int input_handling (double* a, double* b, double* c);
 
 //-----------------------------------------------------------------------------
 //! @brief This function  clears the buffer
@@ -41,9 +63,9 @@ void dashs ();
 void inform_user ();
 
 //-----------------------------------------------------------------------------
-//! @brief This function checks if the user has chosen to exit the program
+//! @brief This function checks, if user has chosen to exit the program
 //!
-//! @param quit_sym - this symbol is entered by the user
+//! @param [in] quit_sym - this symbol is entered by the user
 //!
 //! @return bool - true, when user has chosen to quit
 //!              - false, when user has chosen to continue
@@ -62,16 +84,16 @@ bool check_quit (int user_input_sym);
 void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
-//! @brief This function handles starting testing
+//! @brief This function handles arguments of command line
 //!
 //! @param [in] argc - the number of command line's arguments
 //! @param [in] *argv[] - the array of command line's arguments
 //!
-//! @return bool - true, when user has chosen to start unit testing
-//!              - false, when user has chosen to continue
+//! @return ARG_MEET, if user use command line
+//!         ARG_NO, in other situations
 //!
 //-----------------------------------------------------------------------------
-bool options (int argc, char *argv[]);
+int arg_handle (int argc, char *argv[]);
 
 //-----------------------------------------------------------------------------
 //! @brief This function handles user's exit

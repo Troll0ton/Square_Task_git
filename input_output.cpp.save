@@ -20,7 +20,7 @@ void inform_user ()
 
 //-----------------------------------------------------------------------------
 
-bool input_handling (double *a, double *b, double *c)
+int input_handling (double *a, double *b, double *c)
 {
     assert (a != NULL);
     assert (b != NULL);
@@ -40,7 +40,7 @@ bool input_handling (double *a, double *b, double *c)
             printf ("EXIT");
             dashs ();
 
-            return false;
+            return STOP_WORK;
         }
 
         printf ("Wrong input. Please try again."
@@ -50,7 +50,7 @@ bool input_handling (double *a, double *b, double *c)
         clear_buf ();
     }
 
-    return true;
+    return SUCCESS_READ;
 }
 
 //-----------------------------------------------------------------------------
@@ -101,36 +101,48 @@ void print_amount_of_roots (int num_of_roots)
 
 //-----------------------------------------------------------------------------
 
-bool options (int argc, char *argv[])
+struct Option
 {
-    if(argc > 2)
-    {
-        printf ("To many command line's arguments.");
+    char opt_name[3] = {0};
 
-        return false;
-    }
+    int (*opt_handle) (char* o_name);
+};
 
-    if(argc == 2)
+//-----------------------------------------------------------------------------
+
+int arg_handle (int argc, char *argv[])
+{
+    if(argc != max_argc)
     {
-        if((argv[1][0] != '-') ||
-           (argv[1][1] != 't')    )
+        if (argc > 2)
         {
-            printf ("\n"
-                    "It is not command line's argument  \n"
-                    "input '-t' to begin unit testing   \n\n");
+            printf ("To many command line's arguments.\n");
 
-            return false;
+            return ARG_MEET;
         }
 
-        if(check_starting_test (argv[1][1]))
-        {
-            open_test ();
-
-            return false;
-        }
+        return ARG_NO;
     }
 
-    return true;
+    struct Option arg_val;
+
+    arg_val.opt_name[0] = argv[1][0];
+    arg_val.opt_name[1] = argv[1][1];
+
+    //same for other arguments
+
+    arg_val.opt_handle = check_start_test;
+
+    if(arg_val.opt_handle (arg_val.opt_name) == SUCCESS_READ)
+    {
+        return ARG_MEET;
+    }
+
+    printf ("\n"
+            "It is not command line's argument  \n"
+            "input '-t' to begin unit testing   \n\n");
+
+    return ARG_MEET;
 }
 
 //-----------------------------------------------------------------------------

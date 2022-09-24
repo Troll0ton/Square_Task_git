@@ -2,9 +2,18 @@
 
 //-----------------------------------------------------------------------------
 
-bool check_starting_test (int user_input_sym)
+int check_start_test (char *o_name)
 {
-    return (user_input_sym == 't');
+    char t_sym[] = "-t";
+
+    if(strcmp ((const char*) o_name, (const char*) t_sym) == SAME_STR)
+    {
+        open_test ();
+
+        return SUCCESS_READ;
+    }
+
+    return NO_ARG;
 }
 
 //-----------------------------------------------------------------------------
@@ -14,8 +23,7 @@ void open_test ()
     FILE   *myfile  = fopen (DATA_TEST_FILE, "r");
     assert (myfile != NULL);
 
-    int num_of_roots_convert = 0;
-    int num_of_roots_right   = 0;
+    int num_of_roots_right = 0;
 
     int counter_file = 0;
 
@@ -48,7 +56,6 @@ void open_test ()
     fclose (myfile);
 }
 
-
 //-----------------------------------------------------------------------------
 
 void unit_test (double a,        double b,        double c,
@@ -56,12 +63,12 @@ void unit_test (double a,        double b,        double c,
 {
     bool flag_error  = false;
 
-    if(!std::isfinite (a)        ||
-       !std::isfinite (b)        ||
-       !std::isfinite (c)        ||
-       !std::isfinite (x1_right) ||
-       !std::isfinite (x2_right) ||
-       !std::isfinite (num_of_roots_right))
+    if(!std::isfinite (a)                 ||
+       !std::isfinite (b)                 ||
+       !std::isfinite (c)                 ||
+       !std::isfinite (x1_right)          ||
+       !std::isfinite (x2_right)          ||
+       !std::isfinite (num_of_roots_right)  )
     {
         printf("Wrong unit test data\n");
 
@@ -103,10 +110,12 @@ void unit_test (double a,        double b,        double c,
                 "Expected root: %lg\n", x2, x2_right);
         }
 
+
         if(flag_error == false)
         {
             printf ("It is correct.\n\n");
         }
+
         else
         {
             printf ("\n\n");

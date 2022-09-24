@@ -20,7 +20,7 @@ void inform_user ()
 
 //-----------------------------------------------------------------------------
 
-bool input_handling (double *a, double *b, double *c)
+int input_handling (double *a, double *b, double *c)
 {
     assert (a != NULL);
     assert (b != NULL);
@@ -40,7 +40,7 @@ bool input_handling (double *a, double *b, double *c)
             printf ("EXIT");
             dashs ();
 
-            return false;
+            return STOP_WORK;
         }
 
         printf ("Wrong input. Please try again."
@@ -50,7 +50,7 @@ bool input_handling (double *a, double *b, double *c)
         clear_buf ();
     }
 
-    return true;
+    return SUCCESS_READ;
 }
 
 //-----------------------------------------------------------------------------
@@ -101,36 +101,37 @@ void print_amount_of_roots (int num_of_roots)
 
 //-----------------------------------------------------------------------------
 
-bool options (int argc, char *argv[])
+int arg_handle (int argc, char *argv[])
 {
-    if(argc > 2)
+    if(argc != max_argc)
     {
-        printf ("To many command line's arguments.");
-
-        return false;
-    }
-
-    if(argc == 2)
-    {
-        if((argv[1][0] != '-') ||
-           (argv[1][1] != 't')    )
+        if (argc > 2)
         {
-            printf ("\n"
-                    "It is not command line's argument  \n"
-                    "input '-t' to begin unit testing   \n\n");
+            printf ("To many command line's arguments.\n");
 
-            return false;
+            return ARG_MEET;
         }
 
-        if(check_starting_test (argv[1][1]))
-        {
-            open_test ();
-
-            return false;
-        }
+        return ARG_NO;
     }
 
-    return true;
+    struct Option Opt_arg;
+
+    Opt_arg.opt_name[0] = argv[1][0];
+    Opt_arg.opt_name[1] = argv[1][1];
+
+    Opt_arg.opt_handle = check_start_test;
+
+    if(Opt_arg.opt_handle (Opt_arg.opt_name) == SUCCESS_READ)
+    {
+        return ARG_MEET;
+    }
+
+    printf ("\n"
+            "It is not command line's argument  \n"
+            "input '-t' to begin unit testing   \n\n");
+
+    return ARG_MEET;
 }
 
 //-----------------------------------------------------------------------------

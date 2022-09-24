@@ -8,7 +8,7 @@ int main (int argc, char *argv[])
 {
     assert (argc != 0 && argv != NULL);
 
-    if(options (argc, argv) == false)
+    if(arg_handle (argc, argv) == ARG_MEET)
     {
         prog_wait_close ();
 
@@ -24,7 +24,7 @@ int main (int argc, char *argv[])
 
     inform_user ();
 
-    if(!input_handling (&a, &b, &c))
+    if(input_handling (&a, &b, &c) == STOP_WORK)
     {
         prog_wait_close ();
 
