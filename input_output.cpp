@@ -119,7 +119,6 @@ int arg_handle (int argc, char *argv[])
 
     Opt_arg.opt_name[0] = argv[1][0];
     Opt_arg.opt_name[1] = argv[1][1];
-
     Opt_arg.opt_handle = check_start_test;
 
     if(Opt_arg.opt_handle (Opt_arg.opt_name) == SUCCESS_READ)
