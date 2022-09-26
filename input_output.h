@@ -10,12 +10,23 @@
 
 //-----------------------------------------------------------------------------
 
-#define SUCCESS_READ 1
-#define ARG_MEET 1
-#define NO_ARG 0
-#define ARG_NO 0
-#define SAME_STR 0
-#define STOP_WORK 0
+enum
+{
+    SUCCESS_READ = 1,
+    ARG_MEET = 1,
+    NO_ARG = 0,
+    ARG_NO = 0,
+    SAME_STR = 0,
+    STOP_WORK = 0
+};
+
+//-----------------------------------------------------------------------------
+
+enum
+{
+    TEST_OPEN = 1
+    //other CLA
+};
 
 //-----------------------------------------------------------------------------
 
@@ -27,7 +38,11 @@ struct Option
 {
     char opt_name[3] = {0};
 
-    int (*opt_handle) (char* o_name);
+    int opt_param = 0;
+
+    int (*opt_handle) (struct Option *Struct_opt);
+
+    void (*call_funct) ();
 };
 
 //-----------------------------------------------------------------------------
@@ -82,6 +97,19 @@ bool check_quit (int user_input_sym);
 //!
 //-----------------------------------------------------------------------------
 void print_amount_of_roots (int num_of_roots);
+
+//-----------------------------------------------------------------------------
+//! @brief This function finds out command line argument and
+//!
+//! @param [in] Opt_arg - pointer to struct Option
+//!
+//! @return TEST_OPEN, if argument of command line must run unit testing
+//!         NO_ARG, if argument of command is not correct
+//!
+//! @note if such a symbol is not found, the program runs in standard mode
+//!
+//-----------------------------------------------------------------------------
+int arg_identify (struct Option *Opt_arg);
 
 //-----------------------------------------------------------------------------
 //! @brief This function handles arguments of command line

@@ -101,6 +101,24 @@ void print_amount_of_roots (int num_of_roots)
 
 //-----------------------------------------------------------------------------
 
+int arg_identify (struct Option *Opt_arg)
+{
+    const char *t_sym = "-t";
+
+    if(strcmp ((const char*) (Opt_arg -> opt_name), t_sym) == SAME_STR)
+    {
+        (Opt_arg -> call_funct) = open_test;
+
+        return TEST_OPEN;
+    }
+
+    //Same for other arguments
+
+    return ARG_NO;
+}
+
+//-----------------------------------------------------------------------------
+
 int arg_handle (int argc, char *argv[])
 {
     if(argc != max_argc)
@@ -115,20 +133,23 @@ int arg_handle (int argc, char *argv[])
         return ARG_NO;
     }
 
-    struct Option Opt_arg;
+    struct Option Opt_arg = { };
 
-    Opt_arg.opt_name[0] = argv[1][0];
-    Opt_arg.opt_name[1] = argv[1][1];
-    Opt_arg.opt_handle = check_start_test;
+    *(Opt_arg.opt_name)     = *(*(argv + 1));
+    *(Opt_arg.opt_name + 1) = *(*(argv + 1) + 1);
 
-    if(Opt_arg.opt_handle (Opt_arg.opt_name) == SUCCESS_READ)
+    Opt_arg.opt_handle = arg_identify;
+
+    if(Opt_arg.opt_handle (&Opt_arg) == ARG_NO)
     {
+        printf ("\n"
+                "It is not command line's argument  \n"
+                "input '-t' to begin unit testing   \n\n");
+
         return ARG_MEET;
     }
 
-    printf ("\n"
-            "It is not command line's argument  \n"
-            "input '-t' to begin unit testing   \n\n");
+    Opt_arg.call_funct ();
 
     return ARG_MEET;
 }

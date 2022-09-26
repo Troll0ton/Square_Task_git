@@ -2,22 +2,6 @@
 
 //-----------------------------------------------------------------------------
 
-int check_start_test (char *o_name)
-{
-    char t_sym[] = "-t";
-
-    if(strcmp ((const char*) o_name, (const char*) t_sym) == SAME_STR)
-    {
-        open_test ();
-
-        return SUCCESS_READ;
-    }
-
-    return NO_ARG;
-}
-
-//-----------------------------------------------------------------------------
-
 void open_test ()
 {
     FILE   *myfile  = fopen (DATA_TEST_FILE, "r");
@@ -107,7 +91,7 @@ void unit_test (double a,        double b,        double c,
             flag_error = true;
 
             printf ("Wrong root:    %lg\n"
-                "Expected root: %lg\n", x2, x2_right);
+                    "Expected root: %lg\n", x2, x2_right);
         }
 
 

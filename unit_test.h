@@ -20,19 +20,6 @@
 void open_test ();
 
 //-----------------------------------------------------------------------------
-//! @brief This function checks, if user has chosen to start unit testing
-//!
-//! @param [in] o_name - pointer to argument of command line
-//!
-//! @return SUCCESS_READ, if argument of command line must run unit testing
-//!         NO_ARG, if argument of command is not responsible for this
-//!
-//! @note if such a symbol is not found, the program runs in standard mode
-//!
-//-----------------------------------------------------------------------------
-int check_start_test (char *o_name);
-
-//-----------------------------------------------------------------------------
 //! @brief This function do unit testing
 //!
 //! @param a [in] - a-coefficient
@@ -47,14 +34,6 @@ int check_start_test (char *o_name);
 //-----------------------------------------------------------------------------
 void unit_test (double a, double b, double c,
                 double x1_right, double x2_right, int  num_of_roots_right);
-
-//-----------------------------------------------------------------------------
-//! @brief This function informs the user that there is ERROR in the Test.
-//!
-//! @param [in] num_of_test - test number
-//!
-//-----------------------------------------------------------------------------
-void print_error (int test_num);
 
 //-----------------------------------------------------------------------------
 
