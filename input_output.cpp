@@ -135,8 +135,7 @@ int arg_handle (int argc, char *argv[])
 
     struct Option Opt_arg = { };
 
-    *(Opt_arg.opt_name)     = *(*(argv + 1));
-    *(Opt_arg.opt_name + 1) = *(*(argv + 1) + 1);
+    Opt_arg.opt_name = argv[1];
 
     Opt_arg.opt_handle = arg_identify;
 

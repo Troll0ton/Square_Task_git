@@ -36,7 +36,7 @@ const int max_argc = 2;
 
 struct Option
 {
-    char opt_name[3] = {0};
+    char *opt_name;
 
     int opt_param = 0;
 
