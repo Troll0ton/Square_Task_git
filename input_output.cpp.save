@@ -1,4 +1,4 @@
-#include "input_output.h"
+#include "main.h"
 
 //-----------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ int input_handling (double *a, double *b, double *c)
             printf ("EXIT");
             dashs ();
 
-            return STOP_WORK;
+            return stop_work;
         }
 
         printf ("Wrong input. Please try again."
@@ -50,7 +50,7 @@ int input_handling (double *a, double *b, double *c)
         clear_buf ();
     }
 
-    return SUCCESS_READ;
+    return success_read;
 }
 
 //-----------------------------------------------------------------------------
@@ -101,57 +101,22 @@ void print_amount_of_roots (int num_of_roots)
 
 //-----------------------------------------------------------------------------
 
-int arg_identify (struct Option *Opt_arg)
+void arg_handle (int argc, char* argv[], const struct Option cmd[], int options_range)
 {
-    const char *t_sym = "-t";
+    assert (argc != 0);
+    assert (argv != NULL);
+    assert (cmd  != NULL);
 
-    if(strcmp ((const char*) (Opt_arg -> opt_name), t_sym) == SAME_STR)
+    for(int arg_num = 1; arg_num < argc; arg_num++)
     {
-        (Opt_arg -> call_funct) = open_test;
-
-        return TEST_OPEN;
-    }
-
-    //Same for other arguments
-
-    return ARG_NO;
-}
-
-//-----------------------------------------------------------------------------
-
-int arg_handle (int argc, char *argv[])
-{
-    if(argc != max_argc)
-    {
-        if (argc > 2)
+        for(int i = 0; i < options_range; i++)
         {
-            printf ("To many command line's arguments.\n");
-
-            return ARG_MEET;
+            if (strcmp (argv[arg_num], cmd[i].opt_name) == 0)
+            {
+                cmd[i].func ();
+            }
         }
-
-        return ARG_NO;
     }
-
-    struct Option Opt_arg = { };
-
-    *(Opt_arg.opt_name)     = *(argv + 1);
-    *(Opt_arg.opt_name + 1) = *(*(argv + 1) + 1;
-
-    Opt_arg.opt_handle = arg_identify;
-
-    if(Opt_arg.opt_handle (&Opt_arg) == ARG_NO)
-    {
-        printf ("\n"
-                "It is not command line's argument  \n"
-                "input '-t' to begin unit testing   \n\n");
-
-        return ARG_MEET;
-    }
-
-    Opt_arg.call_funct ();
-
-    return ARG_MEET;
 }
 
 //-----------------------------------------------------------------------------

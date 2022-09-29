@@ -1,8 +1,8 @@
-#include "unit_test.h"
+#include "main.h"
 
 //-----------------------------------------------------------------------------
 
-void open_test ()
+void open_test () //It's also OPEN and CLOSE file, which contains data
 {
     FILE   *myfile  = fopen (DATA_TEST_FILE, "r");
     assert (myfile != NULL);

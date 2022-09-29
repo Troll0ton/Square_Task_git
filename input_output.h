@@ -10,41 +10,21 @@
 
 //-----------------------------------------------------------------------------
 
-enum
-{
-    SUCCESS_READ = 1,
-    ARG_MEET = 1,
-    NO_ARG = 0, // ??
-    ARG_NO = 0,
-    SAME_STR = 0,
-    STOP_WORK = 0
-};
-
-//-----------------------------------------------------------------------------
-
-enum
-{
-    TEST_OPEN = 1
-    //other CLA
-};
-
-//-----------------------------------------------------------------------------
-
-const int max_argc = 2;
-
-//-----------------------------------------------------------------------------
-
 struct Option
 {
     char *opt_name;
 
-    int opt_param = 0;
-
-    int (*opt_handle) (struct Option *Struct_opt);
-
-    void (*call_funct) ();
+    void (*func)();
 };
 
+//-----------------------------------------------------------------------------
+
+const int num_of_support_args = 3;
+
+//-----------------------------------------------------------------------------
+
+const int success_read = 1;
+const int stop_work    = 0;
 
 //-----------------------------------------------------------------------------
 
@@ -100,29 +80,19 @@ bool check_quit (int user_input_sym);
 void print_amount_of_roots (int num_of_roots);
 
 //-----------------------------------------------------------------------------
-//! @brief This function finds out command line argument and
-//!
-//! @param [in] Opt_arg - pointer to struct Option
-//!
-//! @return TEST_OPEN, if argument of command line must run unit testing
-//!         NO_ARG, if argument of command is not correct
-//!
-//! @note if such a symbol is not found, the program runs in standard mode
-//!
-//-----------------------------------------------------------------------------
-int arg_identify (struct Option *Opt_arg);
-
-//-----------------------------------------------------------------------------
 //! @brief This function handles arguments of command line
 //!
 //! @param [in] argc - the number of command line's arguments
 //! @param [in] *argv[] - the array of command line's arguments
+//! @param [in] cmd_args[] - the array of structs, which contains supported args
+//! @param [in] options_range - number of supported args
 //!
-//! @return ARG_MEET, if user use command line
+//! @return ARG_MEET, if user use com
+//!mand line
 //!         ARG_NO, in other situations
 //!
 //-----------------------------------------------------------------------------
-int arg_handle (int argc, char *argv[]);
+void arg_handle (int argc, char* argv[], const struct Option cmd_args[], int options_range);
 
 //-----------------------------------------------------------------------------
 //! @brief This function handles user's exit

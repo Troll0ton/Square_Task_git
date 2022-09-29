@@ -1,12 +1,4 @@
-#include "unit_test.h"
-#include "input_output.h"
-#include "math_funct.h"
-
-
-//
-
-// Opt_arg cmd_args[]
-
+#include "main.h"
 
 //-----------------------------------------------------------------------------
 
@@ -14,12 +6,7 @@ int main (int argc, char *argv[])
 {
     assert (argc != 0 && argv != NULL);
 
-    if(arg_handle (argc, argv) == ARG_MEET)
-    {
-        prog_wait_close ();
-
-        return 0;
-    }
+    arg_handle (argc, argv, cmd_args, num_of_support_args);
 
     double a = 0;
     double b = 0;
@@ -30,7 +17,7 @@ int main (int argc, char *argv[])
 
     inform_user ();
 
-    if(input_handling (&a, &b, &c) == STOP_WORK)
+    if(input_handling (&a, &b, &c) == stop_work)
     {
         prog_wait_close ();
 
