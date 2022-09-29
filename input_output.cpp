@@ -101,12 +101,18 @@ void print_amount_of_roots (int num_of_roots)
 
 //-----------------------------------------------------------------------------
 
+// argv, argc
+
 int arg_identify (struct Option *Opt_arg)
 {
     const char *t_sym = "-t";
 
     if(strcmp ((const char*) (Opt_arg -> opt_name), t_sym) == SAME_STR)
     {
+
+        // Opt_arg->call_funct(argc, argv);
+
+        // --input file.txt --output out.txt
         (Opt_arg -> call_funct) = open_test;
 
         return TEST_OPEN;
@@ -127,13 +133,13 @@ int arg_handle (int argc, char *argv[])
         {
             printf ("To many command line's arguments.\n");
 
-            return ARG_MEET;
+            return ARG_MEET;       // INCORRECT_ARG_NUM
         }
 
         return ARG_NO;
     }
 
-    struct Option Opt_arg = { };
+    struct Option Opt_arg = {};
 
     Opt_arg.opt_name = argv[1];
 
@@ -145,7 +151,7 @@ int arg_handle (int argc, char *argv[])
                 "It is not command line's argument  \n"
                 "input '-t' to begin unit testing   \n\n");
 
-        return ARG_MEET;
+        return ARG_MEET;    //  INCORRECT_ARG
     }
 
     Opt_arg.call_funct ();

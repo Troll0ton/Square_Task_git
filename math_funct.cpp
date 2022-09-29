@@ -16,10 +16,9 @@ int solve_equation (double a, double b, double c, double *x1, double *x2)
     {
         return solve_linear (b, c, x1, x2);
     }
-    else
-    {
-        return solve_quadratic (a, b, c, x1, x2);
-    }
+
+    return solve_quadratic (a, b, c, x1, x2);
+
 }
 
 //-----------------------------------------------------------------------------

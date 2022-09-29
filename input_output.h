@@ -14,7 +14,7 @@ enum
 {
     SUCCESS_READ = 1,
     ARG_MEET = 1,
-    NO_ARG = 0,
+    NO_ARG = 0, // ??
     ARG_NO = 0,
     SAME_STR = 0,
     STOP_WORK = 0
@@ -44,6 +44,7 @@ struct Option
 
     void (*call_funct) ();
 };
+
 
 //-----------------------------------------------------------------------------
 
