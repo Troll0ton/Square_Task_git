@@ -113,7 +113,7 @@ void arg_handle (int argc, char* argv[], const struct Option cmd[], int options_
         {
             if (strcmp (argv[arg_num], cmd[i].opt_name) == 0)
             {
-                cmd[i].func ();
+                cmd[i].func (); //funct(argc, argv) for example
             }
         }
     }
